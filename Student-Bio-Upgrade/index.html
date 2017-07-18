@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Activity 1: Basic HTML Bio</title>
+	<style>
+		body{
+			max-width: 1000px;
+		}
+
+		header{
+			background-color: black;
+			color: white;
+			width: 1000px;
+			height: 60px;
+			text-align: center;
+		}
+
+		.bio, #pic{
+			float:left;
+		}
+
+		p{
+			clear: left;
+		}
+
+		.contactinfo, 
+		#biotext
+		{
+			float:right;
+		}
+
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Student Bio</h1>
+	</header>
+
+	<div>
+		<section class = "bio">
+			<div>
+				<h2><strong>Michael Kallgren</strong></h2>
+			</div>
+
+			<div id = "pic">
+				<img class = headshot src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/20108434_10208096050033594_8632087239247826744_n.jpg?oh=d4a5c5f291bc030a3720efabcc968047&oe=59C5988C" width = "200px" height = "200px">
+			</div>
+
+			<div id = "biotext">
+
+				<p> Here's where the first paragraph about me will go </p>
+		
+				<p> And here's where the second paragraph will go </p>
+			</div>
+		</section>
+
+		<section class = "contactinfo">
+			<h2><strong>Contact Info</strong></h2>
+				<ul>
+					<li><strong>E-mail:</strong><a href = "#">mkallgren08@gmail.com</a></li>
+					<li><strong>GitHub:</strong><a href = "https://github.com/mkallgren08">mkallgren08</a></li>
+					<li><strong>Portfolio:</strong><a href = "#">Coming soon!</a></li>
+				</ul>
+		</section>
+	</div>
+</body>
+</html>
