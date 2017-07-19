@@ -1,0 +1,37 @@
+body{
+	font-size: 18px;
+	font-family: Arial, Serif, Helvetica, "Times New Roman";
+	line-height: 30px;
+}
+
+div{
+	text-align: center;
+	vertical-align: 50%;
+}
+
+.wrapper{
+	width: 600px;
+	margin: 0px auto;
+}
+
+#fixed{
+	position:fixed;
+	top: 0px;
+	left: 0px;
+	width: 250px;
+	height: 100px;
+	background-color: #ebebeb;
+}
+
+#relative{
+	background-color: rgb(200, 200, 200);
+	position: relative;
+	height: 150px;
+}
+
+#absolute{
+	background-color: rgb(277, 127, 0);
+	position: absolute;
+	bottom: 0px;
+	right: -15px;
+}
