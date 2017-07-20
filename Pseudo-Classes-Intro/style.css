@@ -1,0 +1,18 @@
+a{
+	font-size: 16px;
+}
+
+a:hover {
+	color: green;
+	font-weight: bold;
+}
+
+a:active {
+	color: blue;
+	background-color: grey;
+}
+
+a:focus {
+	color: black;
+	background-color: turquoise;
+}
