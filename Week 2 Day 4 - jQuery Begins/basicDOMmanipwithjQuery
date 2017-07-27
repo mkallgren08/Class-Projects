@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Javbascript Dump</title>
+	<script
+  		src="http://code.jquery.com/jquery-3.2.1.js"
+  		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  		crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id = "empty-div"></div>
+	
+	<style type="text/css">
+		.fancy {
+			font-size: 100px;
+			color: green;
+		}
+	</style>
+
+	<script type = "text/javascript">
+	
+
+
+		//You can use jQuery to trim down lines of code! 
+		$("#empty-div").html("<h1> Hello friends! </h1");
+
+		var newDiv = $("<div>");
+		newDiv.html("A pleasure to meet yoU! ")
+
+		$ ("# empty-div").append(newDiv);
+
+		newDiv.attr("class", "fancy");
+
+
+	</script>
+</body>
+</html>

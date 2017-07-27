@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>True/False Trivia Game</title>
+</head>
+<body>
+	<h1><strong>True/False Trivia Game!!!</strong></h1>
+
+	<h2> Correct: <span id = "winCount"></span> out of 10</h2>
+	<h2> Wrong: <span id = "lossCount"></span> out of 10</h2>
+
+	<script>
+		var win = 0;
+    	var loss = 0;
+
+		var questions = {
+			q1: ["Is the sky blue?", true],
+			q2: ["Are elephants the largest animals on Earth?", false],
+			q3: ["The yield strength of a material is the stress at which plastic (permanent) material deformation begins", true],
+			q4: ["Was Goldilocks techincally comitting home invasion?", true],
+			q5: ["", false],
+			q6: ["", false],
+			q7: ["", false],
+			q8: ["", true],
+			q9: ["", false],
+			q10: ["Can a swallow grip a coconut by the husk?", true],
+		};
+
+
+		// var questionsArray = [questions.q1, questions.q2, questions.q3, questions.q4, questions.q5,
+		//					questions.q6,questions.q7, questions.q8, questions.q9, questions.q10]
+	
+
+		// questions.forEach(function(q)) {
+		// 	confirm(question.q[0])
+		// }
+
+		// //Creates array k of [q1, q2, q3, q4, q5, q6....etc]
+		// var k = Object.keys(questions).sort();
+
+		for (var i = 1; i<11; i++){
+			var ques = "q"+i
+			var ans = confirm(questions[["q" + i][0]])
+			console.log(questions["q" + i])
+			console.log(ans)
+		
+
+		// var ans = cofirm
+
+			if (ans === questions[["q" + i][1]]){
+				console.log("correct")
+				win++
+				console.log(win)
+				document.getElementById("winCount").innerHTML = win;
+			} else {
+				loss++
+				console.log("wrong")
+	    		document.getElementById("lossCount").innerHTML = loss;
+			};
+		
+		};
+
+		
+
+
+    	//console.log(questions."q"+i)
+
+		console.log(ans)
+		console.log(questions.q1[0])
+		console.log(questions.q1)
+		// 	var userAns = event.key
+
+		// }
+
+		//forEach()
+	</script>
+	
+</body>
+</html>

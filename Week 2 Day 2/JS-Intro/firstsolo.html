@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Questionaire</title>
+</head>
+<body>
+	<script type = "text/javascript">
+		var foodType = confirm("Would you like a steak sandwich?")
+		var age = confirm("Are you 21 or older?")
+		var denied = "No sake for you you young whippersnapper!"
+		var approved = "And here's some sake."
+		var steak = "Here's a steak sandwich!"
+		var tofu = "Here's a delicious tofu stir-fry"
+
+		if (foodType && age){
+			document.write(steak)
+			document.write(approved)
+		}
+
+		else if (foodType){
+			document.write(steak)
+			document.write(denied)
+		}
+
+		else if (age){
+			document.write(tofu)
+			document.write(approved)
+		}
+
+		else{
+			document.write(tofu)
+			document.write(denied)
+		}
+
+		// if (age){
+		// 	document.write()
+		// }
+
+
+	</script>
+</body>
+</html>

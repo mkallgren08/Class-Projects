@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Random</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <div class="jumbotron">
+
+    <h1 class="text-center">Generate a Random Number!</h1>
+
+    <div class="text-center">
+
+      <!-- Here we have our button for generating random numbers (#random-button) -->
+      <button id="random-button" class="btn btn-primary btn-lg"><h1><span class="glyphicon glyphicon-question-sign"></span></h1></button>
+      
+    </div>
+
+  </div>
+
+  <!-- Here we have div called "random-number" where our random number will go -->
+  <h1 class="text-center" id="random-number"></h1>
+
+  <script type="text/javascript">
+    var generatedNum
+
+    $(document).ready(function() {
+
+      // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
+      // Remember that you need a number from 1-1000. If you use Math.floor, the results of 
+      // Math.random() * 1000 will be anywhere from 0 --> 999.
+
+    $("#random-button").on("click", function(){
+        // Create a string or array which will hold the lottery number
+        var lotteryNumber = ""
+
+        for (var i = 0; i<9; i++){
+            generatedNum= Math.floor(Math.random() * 9) + 1;
+            lotteryNumber = generatedNum + lotteryNumber;
+        };
+
+        //Once we have our final lotto number, we'll prepend (opposite of append) to 
+        //the top of the random-number div
+        $("#random-number").prepend("<br><hr>" + lotteryNumber);
+
+
+      });
+
+      // ...
+
+    });
+
+  </script>
+  
+</body>
+</html>

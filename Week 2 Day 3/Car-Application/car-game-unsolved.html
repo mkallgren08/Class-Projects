@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>My First Object</title>
+  </head>
+  <body>
+    <h2> Here you can learn about car and make it go to work or go around the world!</h2>
+    <ul>
+      <li>Press "c" to find out what car model you have!</li>
+      <li>Press "m" to find out the car's model!</li>
+      <li>Press "d" to find out your car's mileage!</li>
+      <li>Press "h" to honk the horn!</li>
+    </ul>
+
+    <ul>
+      <li>Press "w" to go to work.</li>
+      <li>Press "t" to take a trip around the world.</li>
+    </ul>
+
+    <h3>Be sure to keep an eye on your check engine light!</h3>
+    <script>
+
+    //rewriteStats: function()
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+
+      };
+
+      rewriteStats = function() {
+          console.log("Make:" + car.make)
+          console.log("Model:" +car.model)
+          console.log("Color:" + car.color)
+          console.log("Mileage:" + car.mileage)
+          console.log("Is Working?" + car.isWorking)
+          console.log("----------------------")
+        }
+
+      document.onkeyup = function(event){
+          var userInput = event.key.toLowerCase();
+
+          // car make
+          if (userInput === "c"){
+            alert("The car's make is "+ car.make);
+            
+          } 
+          // car model
+          else if (userInput === "m"){
+            alert("The " + car.make + "is a "+ car.model)
+          }
+
+          else if (userInput === "h"){
+            car.honk();
+          }
+
+          else if (userInput === "d"){
+            alert("It currently has " + car.mileage + " miles on it.")
+          }
+
+          else if (userInput === "w"){
+            car.driveToWork();
+            car.honk()
+            alert("Man this traffic is bad!")
+          }       
+
+          else if (userInput === "t"){
+            car.driveAroundWorld();
+            car.getTuneUp();
+          }
+
+          rewriteStats();
+
+        };
+              
+
+      // How would we log...
+
+    </script>
+    
+  </body>
+</html>

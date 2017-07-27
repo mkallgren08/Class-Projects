@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Looping Through Arrays</title>
+  </head>
+  <body>
+
+    <h1>Open the console to see the magic!</h1>
+
+    <script>
+
+      // Creating an array of vegetables.
+      var zooAnimals = ["Zebra", "Rhino", "Giraffe", "Owl"]
+
+      // Looping through each item in the array and logging a message to the console.
+    for (var i = 0; i < zooAnimals.length; i++) {
+      console.log("I think "+zooAnimals[i]+ "s are pretty nifty!")
+    }
+
+    //We can also do this with a function! This is a much much much more general form that lets you use multiple arrays (as the "list" paramter)
+    function logArray(list) {
+      for (var j = 0; j<list.length; j++){
+        console.log(list[j]);
+      }
+    }
+
+
+
+    </script>
+    
+  </body>
+</html>

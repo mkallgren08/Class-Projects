@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Javbascript Dump</title>
+</head>
+<body>
+	<div id = "empty-div"></div>
+
+	<script type = "text/javascript">
+		var targetDiv = document.getElementById("empty-div");
+
+		targetDiv.innerHTML = "Hello friends!";
+
+		// If we try to add something else into the div, it will 
+		// oerwrite the previous contents
+
+		// Un-comment the line below to show example of overwriting
+		// targetDiv.innerHTML = "It's a pleasure to meet you!";
+
+		// Instead, we can create a new div to add lines!
+		var newDiv = document.createElement("div");
+
+		//We then give this new div the text "It's a pleasure to meet you!"
+		newDiv.innerHTML = "A pleasure to meet you!";
+
+		// We then use the .appendChild function to add the contents of the second div to the first div
+		targetDiv.appendChild(newDiv)
+
+		//We can then also add classes to apply CSS stylings!
+
+		newDiv.createAttribute ("class", "fancy")
+
+
+	</script>
+</body>
+</html>

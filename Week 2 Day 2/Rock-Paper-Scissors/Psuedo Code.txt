@@ -1,0 +1,100 @@
+TO PLAY A GAME OF ROCK, PAPER, SCISSORS:
+---------------------------------------------------
+1) User picks rock, paper, or scissors (buttons? keystroke?)
+
+        1a) Computer logs choice
+
+2) Computer picks a random value in a list of rock, paper, scissors
+
+3) Determine win, loss, or tie:
+	     User/Computer
+	- if rock & rock = tie
+	- if rock & paper = loss
+	- if rock & scissor = win
+
+	- if paper & rock = win
+	- if paper & paper = tie
+	- if paper & scissors = loss
+
+	- if scissors & rock = loss
+	- if scissors & paper = win
+	- if scissors & scissors = tie
+
+4) Store record in a variable by adding one to its value (starting at 0)
+	Ex: if rock & scissor {
+		win++
+		}
+
+
+SO:
+
+<script>
+	var win = 0
+	var tie = 0
+	var losses = 0
+
+	var playerchoice["r", "p", "s"]
+	var compchoice ["r", "p", "s"]
+
+	//------------------------------------------
+		This is where the player's choice is selected 
+
+	
+
+
+	//------------------------------------------
+	alert("User's weapon of choice: " + playerpick") 
+
+	//------------------------------------------
+
+	if (playerpick === comppick){
+		alert("Comp picked that too! You tied.")
+		tie++
+	}
+	
+	// -----------------------------------------
+
+	else if (comppick === "r" && playerpick === "p"){
+		alert("Comp picked rock. You win!")
+		win++
+	}
+
+	// ----------------------------------------
+
+	else if (comppick === "r" && playerpick === "s"){
+		alert("Comp picked rock. You lose :(")
+		loss++
+	}
+
+	// ----------------------------------------
+
+	else if (comppick === "p" && playerpick === "r"){
+		alert("Comp picked paper. You lose :(")
+		loss++
+	}
+
+	// ----------------------------------------
+
+	else if (comppick === "p" && playerpick === "s"){
+		alert("Comp picked paper. You win!")
+		win++
+	}
+
+	// ----------------------------------------
+
+	else if (comppick === "s" && playerpick === "r"){
+		alert("Comp picked scissors. You win!")
+		win++
+	}
+
+	// ----------------------------------------
+
+	else if (comppick === "s" && playerpick === "p"){
+		alert("Comp picked scissors. You win!")
+		win++
+	}
+
+
+
+</script>
+

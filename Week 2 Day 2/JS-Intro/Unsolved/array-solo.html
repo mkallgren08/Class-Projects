@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Array Solo</title>
+</head>
+<body>
+	<script type = "text/javascript">
+
+	var favBands = ["the rolling stones", "the who", "ac/dc", "fun.", "p!nk", "lin-manuel miranda", "the beatles"]
+
+	var answer = prompt("Who is your favorite band or artist?");
+
+	var answerlower = answer.toLowerCase();
+	// If it's NOT in the array.... //
+	if (favBands.indexOf(answerlower) === -1){	
+		alert("Eh, I guess they're alright");
+	}
+	// But if it IS in the array //
+	else{
+		alert( "Hey I like them too!")
+	}
+
+
+	</script>
+</body>
+</html>

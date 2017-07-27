@@ -1,0 +1,29 @@
+In today's class:
+	- DOM (Document Object Model) using Plain Javascript
+	- DOM Manipulation using jQuery
+	- Responding to on-click events
+
+Intro to jQuery:
+------------------------
+
+	- jQuery is a cross-platform Javascript library (analogous to Bootstrap and CSS)
+	- Useful for dyamically inserting, updating ,and removing HTML
+	- Registering click or other change events
+	- Animating HTML elements
+	- Downloading data from databases
+	- And much more!
+
+USING jQUERY
+------------------------
+ 	- Include a CDN link to the jQuery script (available from jQuery's main page)
+ 	- Utilizing the specific jQuery selector, which is the dollar sign:
+
+		Ex: $ ( "#clickme" )
+	
+	- Then apply jQuery methods on the selected elements:
+
+		Ex: $ ( '#clickme' ).on( 'click', function() {
+
+				// trigger an alert.
+				alert ("I've been clicked!");
+		    });

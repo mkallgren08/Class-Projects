@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Clicked</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script
+    src="http://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <h1>Click to Eat Sandwich</h1>
+  <h3 id="pbj">Peanut Butter Jelly</h3>
+  <h3 id="grilledcheese">Grilled Cheese</h3>
+  <h3 id="roastbeef">Roast Beef</h3>
+
+  <script type="text/javascript">
+            // VARIABLES
+      // ====================================================================
+      // Here we create variables for tracking the number of sandwiches eaten
+        var pbjs = 0;
+        var gcs = 0;
+        var rbs = 0;
+      // 
+
+
+    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+    // It's useful to become familiar with now.
+
+    $(document).ready(function() {
+    // ...
+
+      // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+
+        $("#pbj").on("click", function(){
+          // We increase the number eaten
+          pbjs++;
+          // ... we trigger an alert.
+          alert("Yum, Peanut Butter and Jelly Sandwich! You've eaten " + pbjs +" of these so far.");
+          
+        });
+
+        $("#grilledcheese").on("click", function(){
+          // 
+          gcs++;
+          // ... we trigger an alert.
+          alert("Ah, good ol' tostis (that's what we call grilled cheeses in Holland!).You've eaten " + gcs +" of these so far.");
+        });
+
+        $("#roastbeef").on("click", function(){
+          rbs++;
+          // ... we trigger an alert.
+          alert("Oooo, roast beef. Not my favorite, but I can see the appeal! You've eaten " + rbs +" of these so far.");
+        });
+      // ...
+
+    });
+
+</script>
+
+</body>
+
+</html>
