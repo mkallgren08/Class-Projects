@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX Demo</title>
+</head>
+<body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		var title = "Galaxy+Quest";
+		var queryURL = "http://www.omdbapi.com/?apikey=40e9cece&t=" + title
+		  // var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=40e9cece";
+
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).done(function(response){
+			// This called a callback function, specifically a function that runs when AJAX is DONE with its query.
+			// Since the API returns a JSON Object, you can specify categories you want to return as you would in objects.
+			// Ex: for the Actors:, it would be console.log(response.Actors)
+			console.log(response);
+		}).fail(function(){
+			// This runs if you have no wifi or the site is inaccessible
+			console.log("Ruh roh!");
+		});
+		// Now this code will run first, even though sequentially it's at the end! the reason is: 
+		// The ajaz callback function doesn't run until the ebpage is DONE running.
+		// This is an example of asynchronous code!
+		console.log("Something happened")
+
+
+	</script>
+</body>
+</html>

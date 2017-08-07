@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Closure</title>
+</head>
+<body>
+  <h2>Check console to see the madness!</h2>
+
+  <script>
+    var cat = {
+      name: "Gus",
+      color: "gray",
+      age: 15,
+
+      printInfo: function() {
+        console.log("inside printInfo()");
+
+        // What will this print?
+        console.log(this); // it will print out the word "Object" because this function is being called ON an object.
+
+        // What will this print?
+        console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); // Prints out the object values for the corresponding keys
+
+        var nestedFunction = function() {
+          console.log("inside nestedFunction()");
+
+          // What will this print?
+          console.log(this); // This will print out "Window," because window is the default value for "this" - it can't call the 
+                             // items from the obkect "cat" because "cat" is the grandparent of this function - not the direct 
+                             // parent. 
+
+          // What will this print?
+          console.log("Name:", this.name, "Color:", this.color, "Age:", this.age); // Because you can't call a grandparent's info
+                                                                                   // you will have all "undefined" results
+        };
+
+        nestedFunction();
+      }
+    };
+
+    // calls the printInfo function. Which subsequently calls the nestedFunction()
+    cat.printInfo();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+			WHAT IT NEEDS TO RETURN
+-----------------------------------------------------------------------
+
+- Article name (returned.response.docs[i].headline.main)
+- Article author (returned.response.docs[i].byline.original)
+- News desk (Section) (returned.response.docs[i].section_name)
+- Time of publishing (includes date(?)) (returned.response.docs[i].pub_date)
+- URL of article (returned.response.docs[i].web_url)
+
+
+$("form").action(AJAXfunction())

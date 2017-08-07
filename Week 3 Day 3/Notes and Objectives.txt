@@ -1,0 +1,19 @@
+APIs and AJAX
+--------------------------------------------------
+Algortithm:
+
+Program:
+
+The Bubble-Sort Problem
+
+
+API: Application prgoramming interface
+	- An API is basically the go-between between a user's input and the porgram's output. Think of a waiter
+	in a restaurant.
+	- It's a service that let's you build things using them as a framework for certain abilities.
+	- They're good to get data
+	- They're good to build things by providing prebuilt services (more active than libraries)
+
+
+
+JSON: Java-Script Object Notation - catalogs things on websites in object-form

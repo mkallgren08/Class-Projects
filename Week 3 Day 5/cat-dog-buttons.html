@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Magical Cat Button</title>
+</head>
+
+<body>
+  <button class = "btn" id="cats">magical cat button</button>
+  <button class = "btn" id= "dogs">Bork Buddy Button</button>
+  <div id="images">
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    //
+    $(".btn").on("click", function() {
+
+      // defines the API's url for use in the AJAX call; requires an API key to function
+      var tagSearch = $(this).attr("id")
+      var apiURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag="
+      var queryURL = apiURL + tagSearch;
+      console.log(tagSearch);
+
+      // This is the function which puts out a call via AJAX to the API
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+
+      //This line is basically say "Hey, wait for the API to return something (a JSON object) then run a 
+      // function using the returned item as the parameter 'response'."
+      .done(function(response) {
+
+        // This is a variable ID-ing a specific key within the JSON obj
+        var imageUrl = response.data.image_original_url;
+
+        // This is a jQuery function that creates a new HTML image tag stored in the JS variable "catImage."
+        var catImage = $("<img>");
+
+        // These two lines add attributes to the catImage <img> - specifically it adds a source URL and 
+        // an alternate decriptor in the event that the image cannot be displayed.
+        catImage.attr("src", imageUrl);
+        catImage.attr("alt", "cat image");
+
+        // This adds the new image to the #images div; "prepend" adds the new image to the beginning of the div 
+        // rather than the end.
+        $("#images").prepend(catImage);
+      });
+    });
+  </script>
+</body>
+
+</html>

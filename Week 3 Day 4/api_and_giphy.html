@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Using Giphy to Demo APIs</title>
+</head>
+<body>
+	<script src = ""></script>
+
+	<script>
+		var queryUrl = "API GIPHY AND API KEY LINK ";
+		"https://api.giphy.com/v1/gifs/trending?api_key=bed29ae3c8d868cb4fb9dea7a&limit=25&rating=G"
+
+		$.ajax({url: queryUrl, method: 'GET'})
+			.done(function(response){
+				console.log(response);
+			});
+
+
+	</script>
+	
+</body>
+</html>

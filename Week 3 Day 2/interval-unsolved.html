@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+  </head>
+
+  <body>
+
+    <div id="show-number"></div>
+
+    <br>
+
+    <button id="stop">Stop</button>
+    <button id="resume">Resume</button>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Script -->
+    <script type="text/javascript">
+
+    var number = prompt("How long?");
+
+    var intervalId;
+    // On click of button "stop" run stop
+    $("#stop").on("click", stop);
+    // Run "run" on click of run button
+    $("#resume").on("click", run);
+
+    function run() {
+      intervalId = setInterval(decrement, 1000);
+    }
+
+    function decrement() {
+
+      number--;
+
+      $("#show-number").html("<h2>" + number + "</h2>");
+
+      if (number === 0) {
+
+        stop();
+
+        alert("Time Up!");
+
+        number = prompt("How long?");
+
+        run();
+      }
+    }
+
+    function stop() {
+
+      clearInterval(intervalId);
+    }
+
+    run();
+
+    </script>
+
+  </body>
+
+</html>

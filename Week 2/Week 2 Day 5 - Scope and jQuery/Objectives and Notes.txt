@@ -1,0 +1,43 @@
+JAVASCRIPT SCOPE
+--------------------------------
+- In Javascript, *curly brackets* { } indicate BLOCKS OF CODE.
+
+- In order for the code inside the curly brakcets to be executed, 
+  it must meet the condition or it must be called 
+
+- These blocks of code have the power to affect variables outside the 
+  curly brackets IF THOSE VARIABLE WERE DECLARED *OUTISDE* THE BLOCKS.
+
+- You can think of scope as boxes within boxes. 
+	^ Boxes can reach OUTSIDE of themselves to call on variables
+	^ Boxes cannot reach IN to boxes within itself to call
+
+
+        if (pressedBtn === "plus" || pressedBtn === "minus" || 
+            pressedBtn === "times" || pressedBtn === "divide" ||
+            pressedBtn === "power"){
+
+            if (pressedBtn === "plus"){ 
+            mathOperator = "+";
+            $("#operator").html(mathOperator);
+            } else if (pressedBtn === "minus"){
+                mathOperator = "-";
+                $("#operator").html(mathOperator);
+            } else if (pressedBtn === "times"){
+                mathOperator = "x";
+                $("#operator").html(mathOperator);
+            } else if (pressedBtn === "divide"){
+                mathOperator = "/";
+                $("#operator").html(mathOperator);
+            } else if (pressedBtn === "power"){
+                mathOperator = "^";
+                $("#operator").html(mathOperator);
+
+         else if (pressedBtn === "clear"){
+            firstNum = "";
+            $("#first-number").html(firstNum)
+            secondNum = "";
+            $("#second-number").html(secondNum);
+            mathOperator = "";
+            $("#operator").html(mathOperator);
+            }

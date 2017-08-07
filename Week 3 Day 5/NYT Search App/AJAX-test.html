@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX Test</title>
+
+
+</head>
+<body>
+	<button class = "btn">Click me to test</button>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	var i = 0
+
+	function searchNYT(event) {
+      var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+      var query = $("inputid").text(); 
+      var amount = $("inputid").text();
+      var startDate = $("inputid").text();
+      var endDate = $("inputid").text();
+
+
+	  queryURL += '?' + $.param({ 
+	  	'api-key': "972601f883234ac4993c40be74b7d8c3",
+	  	'q' : query,
+	  	'begin_date': startDate,
+		'end_date' : endDate,	
+		});
+
+
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+        }) .done(function(returned){
+
+        for (i=0; i < returned.response.docs.length; i++){
+        	console.log(returned);
+   			console.log(returned.response.docs[i].headline.main)
+   			console.log(returned.response.docs[i].byline.original)
+   			console.log(returned.response.docs[i].new_desk)
+   			console.log(returned.response.docs[i].pub_date)
+   			console.log(returned.response.docs[i].web_url)
+   		};
+
+        }).fail(function(err){
+        	throw err;
+        });
+    };
+	</script>
+
+</body>
+</html>

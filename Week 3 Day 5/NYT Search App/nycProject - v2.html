@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <title>NYC Times Search</title>
+
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+   <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+   <title>Theme Template for Bootstrap</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+
+  </head>
+
+  <body>
+
+        
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>New York Times Search</h1>
+      
+      </div>
+      
+      <div class="row" style="width: 312%">
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-question-circle" aria-hidden="true"></i>Search Parameters</h3>
+            </div>
+            <div class="panel-body">
+              <form>
+              <p><i class="fa fa-id-card-o" aria-hidden="true"></i><b>Search Term:</b></p>
+                <input type="text" name="search" placeholder="Search.." id = "Search">
+              </form>
+              <form>
+              <p>Number of Records to Retrieve:</p>
+                <input type="text" name="retrieve" placeholder="5">
+              </form>
+              <form>
+              <p>Start Year (Optional):</p>
+                <input type="text" name="startYear" placeholder="" id = "start-date">
+              </form>
+              <form>
+              <p>End Year (Optional):</p>
+                <input type="text" name="endYear" placeholder="" id = "end-date">
+              </form>
+              <div class="row">
+              	<button type="submit" class="btn btn-default" id="runSearch"><i class="fa fa-search"></i> Search</button>
+              </div>
+              <div class="row">
+              	<button type="button" class="btn btn-default" id="clearAll"><i class="fa fa-trash"></i> Clear Results</button>
+              </div>
+
+            </div>
+          </div>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Top Articles</h3>
+            </div>
+            <div class="panel-body"></div>
+        
+    </div> 
+
+<script>
+  var i = 0
+
+  function searchNYT() {
+      var basicqueryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+      var query = $("#search").text(); 
+      var amount = $("#inputid").text();
+      var startDate = $("#start-date").text();
+      var endDate = $("#end-date").text();
+      var apiKey = "972601f883234ac4993c40be74b7d8c3"
+
+
+    var queryURL = basicqueryURL
+                  + '?api-key=' + apiKey
+                  + '?q=' +  query
+                  + '?begin_date=' + startDate
+                  + '?end_date=' + endDate; 
+  
+
+
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+        }) .done(function(returned){
+
+        for (i=0; i < returned.response.docs.length; i++){
+          console.log(returned);
+        console.log(returned.response.docs[i].headline.main)
+        console.log(returned.response.docs[i].byline.original)
+        console.log(returned.response.docs[i].new_desk)
+        console.log(returned.response.docs[i].pub_date)
+        console.log(returned.response.docs[i].web_url)
+      };
+
+        })
+    };
+
+    $("runSearch").click(searchNYT())
+  </script>
+
+
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+   
+  </body>
+</html>

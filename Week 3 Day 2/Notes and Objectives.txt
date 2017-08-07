@@ -1,0 +1,11 @@
+GOALS AND OBJECTIVES
+----------------------------
+
+- review setTimeout()
+- learn setInterval()
+- review visualization techniques
+- job interview practice! 
+
+Interval Review
+----------------------------
+- exercise interval-unsolved
