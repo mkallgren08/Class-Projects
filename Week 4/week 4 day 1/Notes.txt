@@ -1,0 +1,15 @@
+DATA PERSISTENCE
+-----------------------------
+
+2 Ways:
+	1) Store data on client
+	2) Store data on server
+
+Do not put secure/sensitive info in local, session, or cookie storage.
+
+local storage - client based, on the page only
+
+session storage - client based, available if the browser is open (so you can 
+tab away, but the info is there when you come back).
+
+cookies are like membership cards at stores - they help link your history together

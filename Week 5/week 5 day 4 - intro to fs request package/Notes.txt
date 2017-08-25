@@ -1,0 +1,69 @@
+fs.writeFile()
+
+
+================================================
+fs.readFile()
+================================================
+
+	
+   File name to read 	encoding  function  err    data is the actual contents
+		|           |  	     |       |     of the file to read.
+		|	    |	     |       |      |
+		V	    V        V	     V	    V
+
+fs.readFile('movies.txt', 'utf8', function(error, data){
+	
+	if (error) {
+	   return console.log(error)
+	}
+
+	console.log(data);
+
+	var dataArr = data.split(",");
+
+	console.log(dataArr)
+
+
+});
+
+
+================================================
+fs.appendFile()
+================================================
+
+
+ File name to append  	   text to        function  err    data is the actual contents
+		|           append            |	      |      |     of the file to read.
+		|	     |	              |       |      |
+		V	     V                V	      V	     V
+
+fs.appendFile('kitty.txt', 'Hello Kitty', function(error, data){
+	
+	});
+	
+
+
+ 
+
+
+=========================================
+request
+=========================================
+
+var request = require("request")
+
+request('Ex.url - omdb.com", function(
+  error,
+  response,
+  body
+){
+  //If the request was sucessful...
+  if (!error && response.errorCode === 200){
+     // thne log the body from the site!
+     console.log(body);
+     console.log("the movie's rating is: " + JSON.parse(body).imdbRating)
+  };
+});
+
+npm install request --save
+request

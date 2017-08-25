@@ -1,0 +1,28 @@
+{
+  "name": "weatherdest",
+  "version": "1.0.0",
+  "description": "This application will gather weather data and address information for any landmark or location.",
+  "main": "weatherdest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Weather",
+    "Zip",
+    "Geocoding"
+  ],
+  "author": "Michael Kallgren",
+  "license": "ISC",
+  "dependencies": {
+    "geocoder": "^0.2.2",
+    "weather-js": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n/A.git"
+  },
+  "bugs": {
+    "url": "https://github.com/n/A/issues"
+  },
+  "homepage": "https://github.com/n/A#readme"
+}

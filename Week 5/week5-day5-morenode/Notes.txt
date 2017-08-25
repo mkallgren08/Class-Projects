@@ -1,0 +1,13 @@
+for the request function's returned body:
+
+console.log(JSON.stringify(result, null, 2));
+
+This will return a version that humans can read easily and readily!
+
+The null function adds a break at certain points in the code and indents 
+on different lines'
+
+console.log(JSON.stringify(result);
+
+This will return a minified version that a computer (i.e. database) can
+read just fine, but would be a nightmare for humans to read.

@@ -1,0 +1,62 @@
+FIREBASE
+-------------------------------------------
+
+//checks whether a person is connected and returns a Boolean true/false
+
+var connectedRef = database.ref(".info/connected")
+ 
+
+// a list of connections created under filepath connections. 
+
+var connectionsRef database.ref(/connections) 
+
+For example:
+--------------------------------------------
+connectionsRef.on("value", function(snap){
+
+	$("#watchers").html(snap.numChildren());
+});
+
+DIFFERENCE BETWEEN .set() AND .ref()
+--------------------------------------------
+	- .set() overwrites any data previous stored in a database
+	- .ref() adds data without overwriting
+
+ADDING DATES/TIMES
+---------------------------------------------
+dateAdded: firebase.database.ServerValue.TIMESTAMP
+
+var testDate = 01/01/2001 
+
+moment(testDate).format('MM/DD/YYYY')
+
+
+child added callback
+-----------------------------
+
+database.ref().on("child_added", function(childSnapshot) { });
+
+
+orderBy* functions
+-----------------------------
+orders a  list of children according to parameter A (typically a key),
+saves a list of length B to persist through reloads, and it does it on 
+event "C" (exs: "click", "value", "child-added"
+
+orderByChild(A).limitToLast(B).on("C", function(snapshot) {});
+
+moment() - date manipulations!
+--------------------------------
+
+need to include moment.js cdn! (After jQuery)
+
+
+
+
+
+
+
+
+
+
+

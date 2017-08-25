@@ -1,0 +1,10 @@
+.jumbotron{
+	text-align:center;
+}
+
+#submit{
+	position: relative;
+	margin: 10px;
+	border-radius: 5px;
+	width: 100px;
+}

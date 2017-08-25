@@ -1,0 +1,26 @@
+mySQL is a large, open-source, dynamic database
+
+Allows you to create and use callbacks.
+
+A callback is a function used as a parameter of another function.
+
+ex:
+
+var f = function() {}
+
+function printThenDo (s, f) {
+	console.log (s);
+	f();
+}
+
+printThenDo( "Hi!", function() {
+	console.log("This is coming from the callback")
+}
+
+
+ex2:
+
+function waitThenDo (delay, f) {
+	setTimeout(function(){
+	console.log("Done waiting");
+	}, 5000};

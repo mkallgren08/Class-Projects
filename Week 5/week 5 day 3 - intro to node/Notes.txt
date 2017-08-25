@@ -1,0 +1,15 @@
+Node.js is an open-source, cross-platform Javascript runtime environment
+designed to be run outside of browsers.
+
+It's a general utility that can be used for a variety of purposes including 
+asset compilation, scripting, monitoring, and *most notably as the basis for 
+web servers*
+
+
+Why use Node.js?
+
+- it re-uses javascript
+- it's easily extendable: tons of plugins exist to expand capabilities
+- fast-implementation: can create a whole server using only a few liness of code
+- single-threaded Asynchronous Model - meaning it can handle multiple requests 
+  simultaneously and not get bottlenecked.
