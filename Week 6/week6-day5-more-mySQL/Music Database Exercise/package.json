@@ -1,0 +1,11 @@
+{
+  "name": "music_database_exercise",
+  "version": "1.0.0",
+  "description": "requires npms - mysql and inquirer",
+  "main": "querySongDB.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

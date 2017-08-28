@@ -1,0 +1,11 @@
+What do you do with data in a mySQL database?
+
+Just remember - CRUD
+
+Create
+
+Read
+
+Update
+
+Delete
