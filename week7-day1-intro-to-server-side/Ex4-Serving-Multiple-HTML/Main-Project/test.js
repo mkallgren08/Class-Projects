@@ -1,0 +1,1 @@
+document.getElementById("path").innerHTML(__dirname)
