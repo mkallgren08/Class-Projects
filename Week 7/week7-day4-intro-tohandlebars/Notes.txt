@@ -1,0 +1,70 @@
+// dependencies
+var express = require('express')
+var expshb = require('express-handlebars)
+
+
+//Set handle bars as the default templating engine.
+
+
+
+This is where we set handlbars as the engine to use for the code
+			|
+			|
+			V
+
+app.engine("handlebars", exphbs({defaultLayout: "main" }));
+app.set("view engine", "handlebars"
+			
+			^
+			|
+			|
+This is where we set the viewing engine to handlebars
+
+Handlebars assumes that you will have a folder in your project called "views"
+	- this will hold your templates
+	- It must ALSO have a "layouts" folder in the "view" folder for holding
+	  our layout templates
+
+A Handlebars file has the ".handlebars" extension
+
+It looks in many ways like an HTML page.
+
+Double braces will "escape" what's inside of them and triple braces will not---
+	--- what does the "escape" mean?
+	- the "escape" is a like a term used to get out a string (to allow
+	  apostrophes, etc).
+
+=================================================================================
+
+Using handlebars:
+
+app.get("/lunches", function(req, res){
+	res.render("index",lunches[1])
+
+})
+
+
+
+res.render(param1, param2)
+
+param1 = "route": template (i.e a *.handlebars file) to actually template the data
+param2 = "context": Object that tells the renderer what to actually render.
+
+=================================================================================
+
+
+Note: the context cannot be an array itself  - you can include full arrays as 
+	the value of an object key though! 
+
+ex: icecreams = [choc, strawberry, vanilla, americone dream]
+
+app.get("/icecreams", function(req, res){
+	res.render("index",icecreams)
+
+}) ------------------> ERROR ERROR ERROR ERROR
+
+app.get("/icecreams", function(req, res){
+	res.render("index",{icys : icecreams})
+}); -----------------> WOO! WOO! WOO! WOO!
+
+=================================================================================
